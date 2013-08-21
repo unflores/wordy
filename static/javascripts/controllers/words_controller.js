@@ -5,7 +5,7 @@ Wordy.WordsController = Ember.ArrayController.extend({
         translation = this.get('newTranslation') || '',
         type        = this.get('newType') || '',
         tags        = this.get('newTags') || '';
-
+        
     if (!(name.trim() && translation.trim() && type.trim() &&tags.trim())) { return; }
 
     // Create the new Word model

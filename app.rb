@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'json'
+require 'pry'
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 get '/' do
@@ -16,6 +17,10 @@ get '/words' do
       {  id: 3,  name: "Je m'en sort",  translation: "I do ok",  type: "expression",  tags: "phrase, vernaculaire"}
     ]
   }.to_json
+end
+
+post '/words' do
+  request.body.read
 end
 
 get '/words/:word_id' do
